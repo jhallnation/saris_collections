@@ -8,3 +8,7 @@
   <%= link_to "Show this product", @product %> |
   <%= link_to "Back to products", products_path %>
 </div>
+ <div>
+   <h4>Inventory</h4>
+   <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) %>
+ </div>

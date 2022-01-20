@@ -8,3 +8,9 @@
 
   <%= button_to "Destroy this product", @product, method: :delete %>
 </div>
+
+<div>
+  <h4>Inventory</h4>
+  <%= render @product.inventories %>
+  <%= render 'inventories/form' %>
+</div>
