@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Monda&display=swap');
+
+$primary-color: #9645BC;
+$secondary-color: #FFFFFF;
+$shared-padding: 15px;
+$primary-font: 'Julius Sans One', sans-serif;
+$default-font: 'Monda', sans-serif;
+
+@mixin shared-mixin {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $primary-font;
+  padding: $shared-padding;
+  display:flex;
+}
+
+
+* {
+  margin: 0;
+}
+
+#page-container {
+  display:flex; 
+  flex-direction:column; 
+  min-height: 100vh;
+}

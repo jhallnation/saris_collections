@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<div class='home-container'>
+  <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+  <div class='home-element' >
+    <%= render 'shared/home_banner' %>
+  </div>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+  <div class='home-element'>
+
+    <h2>Products</h2>
+
+    <div id="categories">
+      <% @categories.each do |category| %>
+        <div class='category-card'>
+          <%= render category %>
+          <p>
+            <%= link_to "Show this category", category %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to "New category", new_category_path %>
+  </div>
 </div>
-
-<%= link_to "New category", new_category_path %>

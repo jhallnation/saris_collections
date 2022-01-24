@@ -65,3 +65,4 @@ group :development do
 end
 
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+gem 'sassc-rails'

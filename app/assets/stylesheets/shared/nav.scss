@@ -1,0 +1,10 @@
+@import '../application.scss';
+
+.navbar-container {
+  @include shared-mixin;
+  justify-content: space-between;
+}
+
+.navbar-element {
+  margin: 0px 20px 0px 20px;
+}
