@@ -13,7 +13,11 @@
   <body>
     <div id='page-container'>
       <%= render 'shared/nav' %>
-      <%= yield %>
+      <div id='content-container'>
+        <div id='content'>
+          <%= yield %>
+        </div>
+      </div>
       <%= render 'shared/footer' %>
     </div>
   </body>

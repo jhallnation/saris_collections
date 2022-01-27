@@ -1,7 +1,7 @@
 @import './application.scss';
 
 .home-banner-container {
-  background-color: rgba($primary-color, 0.5);
+  background-color: $faded-primary-color;
   height: 30vh;
   width: 50vw;
   margin: 75px 0px 75px 0px;
