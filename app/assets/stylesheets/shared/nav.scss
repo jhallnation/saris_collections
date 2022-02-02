@@ -8,3 +8,32 @@
 .navbar-element {
   margin: 0px 20px 0px 20px;
 }
+
+.navbar-element a {
+  @include links;
+}
+
+.dropdown {
+  cursor:pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:0;
+  text-align: center;
+  font-size:12px;
+}
+
+.nav-links {
+  background-color:$primary-color;
+  color:$secondary-color;
+  font-family:$default-font;
+  display:block;
+  text-decoration:none;
+  padding:15px;
+
+  &hover{
+    background-color: $faded-primary-color;
+  }
+}

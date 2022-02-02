@@ -1,6 +1,13 @@
-<div class='navbar-container'>
-  <div class='navbar-element'>Sari's Collections</div>
-  <div class='navbar-element'>
-   Menu 
+<div data-controller="nav" >
+  <div class='navbar-container'>
+    <div class='navbar-element'><%= link_to "Sari's Collections", root_path %></div>
+    <div class='navbar-element dropdown'>
+      <div data-action="click->nav#dropdown">Menu</div>
+    </div>
+  </div>
+  <div data-nav-target="content" class='dropdown-content'>
+      <% @categories.each do |category| %>
+        <%= link_to category.title, category, class: 'nav-links' %>
+      <% end %>
   </div>
 </div>
