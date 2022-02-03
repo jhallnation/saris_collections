@@ -1,8 +1,11 @@
-<div data-controller="nav" >
+<div data-controller="nav" data-nav-display-class="display">
   <div class='navbar-container'>
     <div class='navbar-element'><%= link_to "Sari's Collections", root_path %></div>
     <div class='navbar-element dropdown'>
-      <div data-action="click->nav#dropdown">Menu</div>
+      <input type="checkbox" id="btnControl"/>
+      <label class="btn" for="btnControl">
+        <div data-action="click->nav#dropdown">Menu</div>
+      </label>
     </div>
   </div>
   <div data-nav-target="content" class='dropdown-content'>

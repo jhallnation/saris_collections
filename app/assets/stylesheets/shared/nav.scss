@@ -3,6 +3,8 @@
 .navbar-container {
   @include shared-mixin;
   justify-content: space-between;
+  align-items:center;
+  height:35px;
 }
 
 .navbar-element {
@@ -17,23 +19,44 @@
   cursor:pointer;
 }
 
+#btnControl {
+    display: none;  
+}
+
+#btnControl + label {
+    cursor:pointer;
+  }
+
+
+#btnControl:checked + label {
+    color: $link-hover-cover;
+  }
+
+
 .dropdown-content {
   display: none;
   position: absolute;
   right:0;
   text-align: center;
   font-size:12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.display {
+  display:block;
 }
 
 .nav-links {
+  @include links;
   background-color:$primary-color;
   color:$secondary-color;
   font-family:$default-font;
   display:block;
   text-decoration:none;
   padding:15px;
+  min-width: 100px;
+}
 
-  &hover{
-    background-color: $faded-primary-color;
-  }
+.nav-links:hover {
+  background-color: $faded-primary-color;
 }

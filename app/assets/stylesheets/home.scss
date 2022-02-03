@@ -4,15 +4,12 @@
   background-color: $faded-primary-color;
   height: 30vh;
   width: 50vw;
-  margin: 75px 0px 75px 0px;
+  margin: 50px 0px 50px 0px;
   font-family: $primary-font;
   display:flex;
   justify-content:center;
   align-items: center;
-}
-
-.home-banner-content h1 {
-
+  color: $primary-color;
 }
 
 .home-container {
@@ -27,6 +24,7 @@
 }
 
 #categories {
+  font-family: $default-font;
   display: flex;
   justify-content: space-around;
   gap:50px;
