@@ -9,10 +9,17 @@
 
 .navbar-element {
   margin: 0px 20px 0px 20px;
+  font-size:18px;
+  font-family:$default-font;
 }
 
 .navbar-element a {
   @include links;
+}
+
+.nav-logo {
+  font-family:$primary-font;
+  font-size:22px;
 }
 
 .dropdown {

@@ -1,17 +1,34 @@
 @import './application.scss';
 
-.form {
-  
+.form-text-field label,
+.form-text-field input,
+.form-text-area label {
+  @include form-mixin;
 }
 
-.from-text-field {
-  
+.form-text-area label{
+  margin-bottom: 20px;
 }
 
-.from-text-area {
-  
+.form-button input{
+  margin-top: 20px;
+  background-color: $primary-color;
+  color:$secondary-color;
+  border: black 1px solid;
+  cursor: pointer;
+  padding: 10px;
+  &:hover {
+    background-color: $faded-primary-color;
+    color:black;
+  }
 }
 
-.from-button {
-  
+.form-product-inputs {
+ display: flex;
+ justify-content: space-between;
+}
+
+.form-price,
+.form-dropdown {
+  margin-top: 20px;
 }
