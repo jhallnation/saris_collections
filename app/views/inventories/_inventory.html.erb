@@ -1,5 +1,5 @@
-<div id="<%= dom_id inventory %>">
-    <p>
+<div id="<%= dom_id inventory %>" class='inventory_card'>
+  <p>
     <strong>Color:</strong>
     <%= inventory.color %>
   </p>
@@ -18,4 +18,6 @@
     <strong>Product:</strong>
     <%= inventory.product.title %>
   </p>
+
+  <%= link_to "Edit this inventory", edit_inventory_path(inventory) %> 
 </div>

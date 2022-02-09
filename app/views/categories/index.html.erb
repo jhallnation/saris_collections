@@ -9,12 +9,11 @@
 
     <div id="categories">
       <% @categories.each do |category| %>
-        <div class='category-card'>
-          <%= render category %>
-          <p>
-            <%= link_to "Show this category", category %>
-          </p>
-        </div>
+        <%= link_to category do %>
+          <div class='category-card'>
+            <%= category.title %>
+          </div>
+        <% end %>
       <% end %>
     </div>
 

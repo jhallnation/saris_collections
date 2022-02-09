@@ -25,7 +25,7 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to inventory_url(@inventory), notice: "Inventory was successfully created." }
+        format.html { redirect_to edit_product_path(@inventory.product_id), notice: "Inventory was successfully created." }
         format.json { render :show, status: :created, location: @inventory }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class InventoriesController < ApplicationController
   def update
     respond_to do |format|
       if @inventory.update(inventory_params)
-        format.html { redirect_to inventory_url(@inventory), notice: "Inventory was successfully updated." }
+        format.html { redirect_to edit_product_path(@inventory.product_id), notice: "Inventory was successfully updated." }
         format.json { render :show, status: :ok, location: @inventory }
       else
         format.html { render :edit, status: :unprocessable_entity }

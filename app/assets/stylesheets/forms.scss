@@ -25,10 +25,10 @@
 
 .form-product-inputs {
  display: flex;
- justify-content: space-between;
+ justify-content: space-around;
 }
 
-.form-price,
-.form-dropdown {
-  margin-top: 20px;
+.form-price label,
+.form-dropdown label{
+  margin: 20px 0px 20px 0px;
 }

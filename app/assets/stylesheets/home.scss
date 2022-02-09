@@ -31,9 +31,20 @@
   flex-wrap:wrap;
   margin: 0px 100px 100px 100px;
 }
+#categories a {
+  flex: 1 0 33%;
+  text-decoration:none;
+  color:black;
+}
 
 .category-card {
+  text-align:center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 25px;
-  flex: 1 0 21%;
+
+  &:hover {
+    background-color:$faded-primary-color;
+    color:$primary-color;
+  }
+  
 }

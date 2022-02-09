@@ -1,0 +1,15 @@
+@import './application.scss';
+
+.inventories {
+  display: flex;
+  justify-content: space-around;
+  gap:35px;
+  flex-wrap:wrap;
+  margin: 0px 100px 100px 100px;
+}
+
+.inventory_card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 25px;
+  flex: 1 0 21%;
+}

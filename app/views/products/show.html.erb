@@ -11,6 +11,10 @@
 
 <div>
   <h4>Inventory</h4>
-  <%= render @product.inventories %>
-  <%= render 'inventories/form' %>
+
+  <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) %>
+
+  <div class="inventories">
+    <%= render @product.inventories %>
+  </div>
 </div>

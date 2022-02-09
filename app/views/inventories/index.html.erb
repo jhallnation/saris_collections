@@ -2,12 +2,9 @@
 
 <h1>Inventories</h1>
 
-<div id="inventories">
+<div class="inventories">
   <% @inventories.each do |inventory| %>
     <%= render inventory %>
-    <p>
-      <%= link_to "Show this inventory", inventory %>
-    </p>
   <% end %>
 </div>
 
