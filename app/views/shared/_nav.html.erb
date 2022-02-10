@@ -9,8 +9,9 @@
     </div>
   </div>
   <div data-nav-target="content" class='dropdown-content'>
-      <% @categories.each do |category| %>
-        <%= link_to category.title, category, class: 'nav-links' %>
-      <% end %>
+    <%= login_helper 'nav-links' %>
+    <% @categories.each do |category| %>
+      <%= link_to category.title, category, class: 'nav-links' %>
+    <% end %>
   </div>
 </div>

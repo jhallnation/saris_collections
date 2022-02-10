@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
   before_action :set_categories
 
-  private
-   def set_categories
-    @categories = Category.select('id', 'title', 'slug');
-  end
+  include DeviseWhitelist
+  include CategoriesConcern
+  include CurrentUserConcern
 end

@@ -66,3 +66,5 @@ end
 
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'sassc-rails'
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'petergate', '~> 1.6', '>= 1.6.3'
