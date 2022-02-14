@@ -1,5 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
+<div class='breadcrumb-nav'>
+  <%= link_to 'Home', root_path %> > Products
+</div>
+
 <h1>Products</h1>
 
 <div id="products">
@@ -11,4 +15,4 @@
   <% end %>
 </div>
 
-<%= link_to "New product", new_product_path %>
+<%= link_to "New product", new_product_path if logged_in?(:site_admin) %>

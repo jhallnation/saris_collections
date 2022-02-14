@@ -4,6 +4,8 @@
 
 <br>
 
+<%= button_to "Destroy this product", @product, method: :delete if logged_in?(:site_admin) %>
+
 <div>
   <%= link_to "Show this product", @product %> |
   <%= link_to "Back to products", products_path %>

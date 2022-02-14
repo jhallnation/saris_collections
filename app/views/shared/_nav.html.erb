@@ -10,6 +10,7 @@
   </div>
   <div data-nav-target="content" class='dropdown-content'>
     <%= login_helper 'nav-links' %>
+    <%= link_to 'All products', products_path %>
     <% @categories.each do |category| %>
       <%= link_to category.title, category, class: 'nav-links' %>
     <% end %>

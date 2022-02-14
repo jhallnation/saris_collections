@@ -1,18 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
+<div class='breadcrumb-nav'>
+  <%= link_to 'Home', root_path %> > 
+  <%= link_to @product.category.title, category_path(@product.category.id) %> > 
+  <%= @product.title %>
+</div>
+
 <%= render @product %>
 
 <div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <%= link_to "Edit this product", edit_product_path(@product) if logged_in?(:site_admin) %>
 </div>
 
 <div>
   <h4>Inventory</h4>
 
-  <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) %>
+  <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) if logged_in?(:site_admin) %>
 
   <div class="inventories">
     <%= render @product.inventories %>

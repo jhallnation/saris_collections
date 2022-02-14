@@ -19,5 +19,5 @@
     <%= inventory.product.title %>
   </p>
 
-  <%= link_to "Edit this inventory", edit_inventory_path(inventory) %> 
+  <%= link_to "Edit this inventory", edit_inventory_path(inventory) if logged_in?(:site_admin) %> 
 </div>
