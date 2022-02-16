@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.includes(:inventories).friendly.find(params[:id])
     @inventory = Inventory.new
+    @image = @product.inventories[0].image
   end
 
   # GET /products/new

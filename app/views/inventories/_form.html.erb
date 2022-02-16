@@ -27,6 +27,16 @@
       <%= form.text_field :quantity %>
     </div>
 
+    <div class='form-price'>
+      <%= form.label :price, style: "display: block" %>
+      <%= form.text_field :price %>
+    </div>
+
+    <div class='form-text-field'>
+      <%= form.label :image, style: "display: block" %>
+      <%= form.file_field :image %>
+    </div>
+
     <div>
       <%= form.hidden_field :product_id %>
     </div>
