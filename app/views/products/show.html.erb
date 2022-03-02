@@ -6,7 +6,7 @@
   <%= @product.title %>
 </div>
 
-<%= image_tag check_image(@image.url) %>
+<%= image_tag check_image(@image) %>
 
 <%= render @product %>
 
@@ -20,6 +20,6 @@
   <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) if logged_in?(:site_admin) %>
 
   <div class="inventories">
-    <%= render @product.inventories %>
+    <%= render @inventories %>
   </div>
 </div>

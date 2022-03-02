@@ -1,7 +1,7 @@
 module ProductsHelper
 
 def image_generator(height:, width:)
-  "http://placehold.it/#{height}x#{width}"
+  "https://place-hold.it/#{height}x#{width}"
   end
 
   def check_image img
