@@ -22,6 +22,7 @@ class InventoriesController < ApplicationController
 
   # POST /inventories or /inventories.json
   def create
+
     @inventory = Inventory.new(inventory_params)
 
     respond_to do |format|
@@ -50,6 +51,10 @@ class InventoriesController < ApplicationController
 
   # DELETE /inventories/1 or /inventories/1.json
   def destroy
+
+    #To remove images from s3
+    @inventory.image.remove!
+
     @inventory.destroy
 
     respond_to do |format|

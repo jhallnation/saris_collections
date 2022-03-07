@@ -6,4 +6,5 @@
 
 <div>
   <%= link_to "Back to this inventory's product", product_path(@inventory.product_id) %>
+  <%= button_to "Destroy this inventory", @inventory, method: :delete if logged_in?(:site_admin) %>
 </div>

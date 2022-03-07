@@ -12,6 +12,7 @@
         <%= link_to category do %>
           <div class='category-card'>
             <%= category.title %>
+            <%= image_tag check_image(category.image) %>
           </div>
         <% end %>
       <% end %>

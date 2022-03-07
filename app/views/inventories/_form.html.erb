@@ -34,11 +34,17 @@
 
     <div class='form-text-field'>
       <%= form.label :image, style: "display: block" %>
+      Current image <br>
+      <% if @inventory.image.url %>
+        <%= image_tag @inventory.image.url %>
+      <% else %>
+        No current image
+      <% end %>
       <%= form.file_field :image %>
     </div>
 
     <div>
-      <%= form.hidden_field :product_id %>
+      <%= form.hidden_field :product_id, value: params[:product_id] %>
     </div>
 
     <div class='form-button'>
