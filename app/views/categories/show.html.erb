@@ -8,11 +8,9 @@
 
 <h4>Items</h4>
 
-<div>
+<%= link_to "Add Product", new_product_path(:category_id => @category.id) if logged_in?(:site_admin) %>
 
-
-    
-       
+<div>     
 
   <% @category.products .each do |product| %>
     <%= link_to product do %>

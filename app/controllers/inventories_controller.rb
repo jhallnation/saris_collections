@@ -14,16 +14,19 @@ class InventoriesController < ApplicationController
   # GET /inventories/new
   def new
     @inventory = Inventory.new
+    @inventory.product_id= params[:product_id]
+    @product_title = Product.find(@inventory.product_id).title
   end
 
   # GET /inventories/1/edit
   def edit
+    @product_title = Product.find(@inventory.product_id).title
   end
 
   # POST /inventories or /inventories.json
   def create
-
     @inventory = Inventory.new(inventory_params)
+    @product_title = Product.find(@inventory.product_id).title
 
     respond_to do |format|
       if @inventory.save
@@ -38,6 +41,8 @@ class InventoriesController < ApplicationController
 
   # PATCH/PUT /inventories/1 or /inventories/1.json
   def update
+    @product_title = Product.find(@inventory.product_id).title
+
     respond_to do |format|
       if @inventory.update(inventory_params)
         format.html { redirect_to product_path(@inventory.product_id), notice: "Inventory was successfully updated." }

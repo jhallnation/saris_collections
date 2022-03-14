@@ -7,6 +7,8 @@
 
   <div class='home-element'>
 
+    <%= link_to "New category", new_category_path if logged_in?(:site_admin) %>
+
     <div id="categories">
       <% @categories.each do |category| %>
         <%= link_to category do %>
@@ -18,6 +20,5 @@
       <% end %>
     </div>
 
-    <%= link_to "New category", new_category_path if logged_in?(:site_admin) %>
   </div>
 </div>

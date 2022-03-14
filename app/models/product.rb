@@ -7,5 +7,6 @@ class Product < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates_presence_of  :title, :price, :category_id
+  validates_presence_of  :title, :category_id
+
 end

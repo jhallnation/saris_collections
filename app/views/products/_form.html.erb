@@ -24,16 +24,24 @@
       </div>
 
       <div class='form-product-inputs'>
-        <div class='form-price'>
+ <!--        <div class='form-price'>
           <%= form.label :price, style: "display: block" %>
           <%= form.text_field :price %>
-        </div>
+        </div> -->
 
-        <div class='form-dropdown'>
-          <%= form.label :category, style: "display: block" %>
-          <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'title') %>
-        </div>
+      <div class='form-dropdown'>
+        <%= form.label :category, style: "display: block" %>
+        <%= form.text_field :category_id, :value => @category_title, :readonly => true %>
+        <%= form.hidden_field :category_id, value: product.category_id %>
       </div>
+
+    <!--     <div class='form-dropdown'>
+          <%= form.label :category, style: "display: block" %>
+          <%= form.select :category_id, options_from_collection_for_select(Category.all, 'id', 'title', params[:category_id]) %>
+        </div> -->
+      </div>
+
+      <!--  -->
 
       <div class='form-button'>
         <%= form.submit %>
