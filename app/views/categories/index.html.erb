@@ -5,20 +5,26 @@
     <%= render 'shared/home_banner' %>
   </div>
 
+  <% if logged_in?(:site_admin) %>
+    <div class='home-element admin-link'>
+      <%= link_to "New category", new_category_path, class: "admin-link" %>
+    </div>
+    <br />
+  <% end -%>
+
+
   <div class='home-element'>
-
-    <%= link_to "New category", new_category_path if logged_in?(:site_admin) %>
-
     <div id="categories">
       <% @categories.each do |category| %>
         <%= link_to category do %>
           <div class='category-card'>
-            <%= category.title %>
-            <%= image_tag check_image(category.image) %>
+            <div class='category-card-title'> 
+              <%= category.title %>
+            </div>
+            <%= image_tag(check_image(category.image), size: "350x200")  %>
           </div>
         <% end %>
       <% end %>
     </div>
-
   </div>
 </div>

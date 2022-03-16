@@ -85,3 +85,10 @@ html, body {
 #content h1 {
   text-align: center;
 }
+
+.admin-link a{
+  text-decoration:none;
+  &:hover {
+    color:$primary-color;
+  }
+}
