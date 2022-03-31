@@ -1,7 +1,7 @@
 <div data-controller="nav" data-nav-display-class="display">
   <div class='navbar-container'>
     <div class='navbar-element nav-logo'><%= link_to "Safi's Collections", root_path %></div>
-    <% if user_signed_in? %>
+    <% if !current_user.is_a?(GuestUser) %>
       <div class='current-user-name'>
         Hello <%= current_user.first_name %>!
       </div>

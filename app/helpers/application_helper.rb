@@ -10,15 +10,15 @@ module ApplicationHelper
     end
   end
 
-  def image_generator(height:, width:)
-    "https://place-hold.it/#{height}x#{width}"
+  def image_generator(width:, height:)
+    "https://place-hold.it/#{width}x#{height}"
   end
 
   def check_image img
     if !img.nil?
       img
     else    
-      image_generator(height: '350', width: '200')
+      image_generator(width: '350', height: '200')
     end
   end
 end

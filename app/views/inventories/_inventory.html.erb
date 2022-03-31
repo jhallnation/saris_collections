@@ -1,4 +1,7 @@
 <div id="<%= dom_id inventory %>" class='inventory_card'>
+
+  <%= image_tag check_image(inventory.image.url), size: "350x200" %>
+
   <p>
     <strong>Color:</strong>
     <%= inventory.color %>
@@ -18,6 +21,12 @@
     <strong>Product:</strong>
     <%= inventory.product.title %>
   </p>
+
+  <p>
+    <strong>Price:</strong>
+    $<%= inventory.price %>
+  </p>
+
 
   <%= link_to "Edit this inventory", edit_inventory_path(inventory) if logged_in?(:site_admin) %> 
 </div>
