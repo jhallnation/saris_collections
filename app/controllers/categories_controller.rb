@@ -4,11 +4,18 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    if logged_in?(:site_admin)
+      @categories = Category.all
+    else
+      @categories = Category.published
+    end
   end
 
   # GET /categories/1 or /categories/1.json
   def show
+    if logged_in?(:site_admin) == false && @category.draft?
+      redirect_to root_path, notice: 'You are not authorized to view this page!' 
+    end
   end
 
   # GET /categories/new
@@ -66,6 +73,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:title, :description)
+      params.require(:category).permit(:title, :description, :status)
     end
 end

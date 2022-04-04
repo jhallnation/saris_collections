@@ -22,6 +22,20 @@
       <%= form.rich_text_area :description %>
     </div>
 
+    <br>
+
+    <div class=''>
+      <div>
+        <%= form.radio_button :status, 'draft' %>
+        <%= form.label :status, 'Draft' %>
+      </div>
+      <br>
+      <div>
+        <%= form.radio_button :status, 'published' %>
+        <%= form.label :status, 'Published' %>
+      </div>
+    </div>
+
     <div class='form-button'>
       <%= form.submit %>
     </div>

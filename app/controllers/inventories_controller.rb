@@ -3,12 +3,19 @@ class InventoriesController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /inventories or /inventories.json
-  def index
-    @inventories = Inventory.all
+  def index  
+    if logged_in?(:site_admin)
+      @inventories = Inventory.all
+    else
+      @inventories = Inventory.published
+    end    
   end
 
   # GET /inventories/1 or /inventories/1.json
   def show
+    if logged_in?(:site_admin) == false && @inventory.draft?
+      redirect_to product_path(@inventory.product_id), notice: 'You are not authorized to view this page!' 
+    end
   end
 
   # GET /inventories/new
@@ -76,6 +83,6 @@ class InventoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inventory_params
-      params.require(:inventory).permit(:color, :size, :quantity, :product_id, :price, :image)
+      params.require(:inventory).permit(:color, :size, :quantity, :product_id, :price, :image, :status)
     end
 end

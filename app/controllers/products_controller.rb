@@ -6,13 +6,21 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    if logged_in?(:site_admin)
+      @products = Product.all
+    else
+      @products = Product.published
+    end
   end
 
   # GET /products/1 or /products/1.json
   def show
-    @product = Product.includes(:inventories).friendly.find(params[:id])
-    @inventory = Inventory.new
+    if logged_in?(:site_admin) || @product.published?
+      @product = Product.includes(:inventories).friendly.find(params[:id])
+      @inventory = Inventory.new
+    else
+      redirect_to product_path, notice: 'You are not authorized to view this page!' 
+    end
   end
 
   # GET /products/new
@@ -95,6 +103,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :description, :price, :category_id)
+      params.require(:product).permit(:title, :description, :category_id, :status)
     end
 end

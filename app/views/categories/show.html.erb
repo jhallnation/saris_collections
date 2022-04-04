@@ -11,13 +11,15 @@
 <%= link_to "Add Product", new_product_path(:category_id => @category.id) if logged_in?(:site_admin) %>
 
 <div>     
-
-  <% @category.products .each do |product| %>
-    <%= link_to product do %>
-      <%= product.title %>
-      <%= product.description %>
-      <%= product.price %>
-    <% end %>
+  <% @category.products.each do |product| %>
+    <% if product.published?|| logged_in?(:site_admin) %>
+      <div class='category-items'>
+        <%= link_to product do %>
+          <%= product.title %>
+          <%= product.description %>
+        <% end %>
+      </div>
+      <% end %>
   <% end %>
 </div>
 

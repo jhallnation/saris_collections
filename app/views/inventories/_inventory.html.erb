@@ -1,32 +1,34 @@
-<div id="<%= dom_id inventory %>" class='inventory_card'>
+<% if inventory.published?|| logged_in?(:site_admin) %>
+  <div id="<%= dom_id inventory %>" class='inventory_card'>
 
-  <%= image_tag check_image(inventory.image.url), size: "350x200" %>
+    <%= image_tag check_image(inventory.image.url), size: "350x200" %>
 
-  <p>
-    <strong>Color:</strong>
-    <%= inventory.color %>
-  </p>
+    <p>
+      <strong>Color:</strong>
+      <%= inventory.color %>
+    </p>
 
-  <p>
-    <strong>Size:</strong>
-    <%= inventory.size %>
-  </p>
+    <p>
+      <strong>Size:</strong>
+      <%= inventory.size %>
+    </p>
 
-  <p>
-    <strong>Quantity:</strong>
-    <%= inventory.quantity %>
-  </p>
+    <p>
+      <strong>Quantity:</strong>
+      <%= inventory.quantity %>
+    </p>
 
-  <p>
-    <strong>Product:</strong>
-    <%= inventory.product.title %>
-  </p>
+    <p>
+      <strong>Product:</strong>
+      <%= inventory.product.title %>
+    </p>
 
-  <p>
-    <strong>Price:</strong>
-    $<%= inventory.price %>
-  </p>
+    <p>
+      <strong>Price:</strong>
+      $<%= inventory.price %>
+    </p>
 
 
-  <%= link_to "Edit this inventory", edit_inventory_path(inventory) if logged_in?(:site_admin) %> 
-</div>
+    <%= link_to "Edit this inventory", edit_inventory_path(inventory) if logged_in?(:site_admin) %> 
+  </div>
+  <% end %>

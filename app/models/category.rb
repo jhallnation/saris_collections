@@ -1,6 +1,8 @@
 class Category < ApplicationRecord
   has_many :products, dependent: :destroy
 
+  enum status: {draft: 0, published: 1}
+
   has_rich_text :description
 
   extend FriendlyId
