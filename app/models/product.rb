@@ -11,4 +11,18 @@ class Product < ApplicationRecord
 
   validates_presence_of  :title, :category_id
 
+  def image
+    image = nil
+    catch :done do 
+      self.inventories.each do |inventory|
+        if inventory.image.url
+          image = inventory.image.url
+          throw :done
+        end
+      end
+    end
+    
+    return image
+  end
+
 end

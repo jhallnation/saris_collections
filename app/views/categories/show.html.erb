@@ -6,17 +6,17 @@
 
 <%= render @category %>
 
-<h4>Items</h4>
-
 <%= link_to "Add Product", new_product_path(:category_id => @category.id) if logged_in?(:site_admin) %>
 
-<div>     
+<div class='category-products-container'>     
   <% @category.products.each do |product| %>
     <% if product.published?|| logged_in?(:site_admin) %>
-      <div class='category-items'>
+      <div class='category-products'>
         <%= link_to product do %>
-          <%= product.title %>
-          <%= product.description %>
+          <div class='product-link-title'>
+            <%= product.title %>
+          </div>
+          <%= image_tag(check_image(product.image), size: "350x200")  %>
         <% end %>
       </div>
       <% end %>

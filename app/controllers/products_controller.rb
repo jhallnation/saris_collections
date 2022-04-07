@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy get_display_image]
   before_action :get_inventories, only: %i[ show get_display_image ]
-  before_action :get_display_image, only: %i[ show ]
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /products or /products.json
@@ -87,18 +86,6 @@ class ProductsController < ApplicationController
 
     def get_inventories
       @inventories = Inventory.where(product_id: @product.id)
-    end
-
-    def get_display_image
-      @inventories.each do |inventory|
-        if inventory.image.url 
-          @image = inventory.image.url 
-          puts "***************************"
-          puts inventory.image
-          puts "***************************"
-          break
-        end
-      end
     end
 
     # Only allow a list of trusted parameters through.
