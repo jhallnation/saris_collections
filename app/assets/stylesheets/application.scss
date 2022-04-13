@@ -16,17 +16,19 @@
 
 $primary-color: #9645BC;
 $secondary-color: #FFFFFF;
-$shared-padding: 15px;
+$shared-padding: 15px 0px 15px 0px;
 $primary-font: 'Charm', cursive;
 $default-font: 'Libre Baskerville', serif;
 $faded-primary-color: #F2E8F7;
 $link-hover-cover: black;
+$container-margin: 15px 0px 15px 0px;
 
 @mixin shared-mixin {
-  background-color: $primary-color;
-  color: $secondary-color;
+  color: $primary-color;
   padding: $shared-padding;
-  display:flex;
+  display: grid;
+  position: absolute;
+  width:100%;
 }
 
 @mixin page-setup {
@@ -57,28 +59,31 @@ $link-hover-cover: black;
 }
 
 html, body {
+  position: relative;
+  
   width: 100%;
-  height: 100%;
+  
   font-family: $default-font;
 }
 
 #page-container {
   min-height: 100%;
   display:grid; 
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+  grid-template-columns: .5fr 2fr .5fr;
+  background-color: $faded-primary-color;
+  min-height: 100vh;
 }
 
 #content-container {
   @include page-setup;
-  background-color: $faded-primary-color;
+  background-color: $secondary-color;
 }
 
 #content {
   @include page-setup;
   padding: 50px 0px 50px 0px; 
-  width: 70vw;
-  background-color: $secondary-color;
+  
+  
   flex-grow: 1;
 }
 

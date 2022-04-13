@@ -2,6 +2,7 @@
 
 .footer-container {
   @include shared-mixin;
-  justify-content: center;
-  margin-top:auto;
+  align-items:center;
+  text-align:center;
+  bottom:0;
 }

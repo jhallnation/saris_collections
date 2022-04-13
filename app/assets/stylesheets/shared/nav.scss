@@ -2,13 +2,13 @@
 
 .navbar-container {
   @include shared-mixin;
-  justify-content: space-between;
+  grid-template-columns: .5fr 2fr .5fr;
   align-items:center;
   height:35px;
 }
 
 .navbar-element {
-  margin: 0px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
   font-size:18px;
   font-family:$default-font;
 }
@@ -20,10 +20,16 @@
 .nav-logo {
   font-family:$primary-font;
   font-size:22px;
+  text-align: center;
+  a {
+    color: $primary-color;
+  }
 }
 
 .dropdown {
   cursor:pointer;
+  text-align:right;
+  text-align: center;
 }
 
 #btnControl {
@@ -44,6 +50,8 @@
   display: none;
   position: absolute;
   right:0;
+  top:60px;
+
   text-align: center;
   font-size:12px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -61,10 +69,14 @@
   display:block;
   text-decoration:none;
   padding:15px;
-  min-width: 100px;
-  width:100px;
+  
+  width:15vw;
 }
 
 .nav-links:hover {
   background-color: $faded-primary-color;
+}
+
+.current-user-name {
+  text-align: center;
 }
