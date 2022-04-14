@@ -1,23 +1,20 @@
-<div data-controller="nav" data-nav-display-class="display">
-  <div class='navbar-container'>
-    <div class='navbar-element nav-logo'><%= link_to "Safi's Collections", root_path %></div>
-    <% if !current_user.is_a?(GuestUser) %>
-      <div class='current-user-name'>
-        Hello <%= current_user.first_name %>!
-      </div>
-    <% end %>
-    <div class='navbar-element dropdown'>
-      <input type="checkbox" id="btnControl"/>
-      <label class="btn" for="btnControl">
-        <div data-action="click->nav#dropdown">Menu</div>
-      </label>
+<div class='navbar-container'>
+  <div class='navbar-element nav-logo'><%= link_to "Safi's Collections", root_path %></div>
+  <% if !current_user.is_a?(GuestUser) %>
+    <div class='current-user-name'>
+      Hello <%= current_user.first_name %>!
     </div>
+  <% end %>
+  <div class='navbar-element dropdown'>
+    <div class='menu-btn' onclick="toggleMenu(event)"><i class="material-icons md-36">menu</i></div>
   </div>
-  <div data-nav-target="content" class='dropdown-content'>
-    <!-- <%= login_helper 'nav-links' %> -->
-    <%= link_to 'All products', products_path, class: 'nav-links'  %>
-    <% @categories.each do |category| %>
-      <%= link_to category.title, category, class: 'nav-links' %>
-    <% end %>
-  </div>
+</div>
+<div id='dropdown-content'>
+  <div class="hr-line"></div>
+  <!-- <%= login_helper 'nav-links' %> -->
+  <%= link_to 'All products', products_path, class: 'nav-links'  %>
+  <% @categories.each do |category| %>
+    <%= link_to category.title, category, class: 'nav-links' %>
+  <% end %>
+  <div class="hr-line"></div>
 </div>

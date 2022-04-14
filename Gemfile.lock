@@ -136,6 +136,8 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
+    material_icons (2.2.1)
+      railties (>= 3.2)
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
@@ -252,6 +254,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  material_icons
   money-rails
   petergate (~> 1.6, >= 1.6.3)
   pg (~> 1.1)

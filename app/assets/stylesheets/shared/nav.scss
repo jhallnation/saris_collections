@@ -32,33 +32,21 @@
   text-align: center;
 }
 
-#btnControl {
-    display: none;  
-}
-
-#btnControl + label {
-    cursor:pointer;
-  }
-
 
 #btnControl:checked + label {
     color: $link-hover-cover;
   }
 
-
-.dropdown-content {
+#dropdown-content {
   display: none;
   position: absolute;
   right:0;
   top:60px;
-
   text-align: center;
   font-size:12px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.display {
-  display:block;
+  height:100vh;
+  background-color:$primary-color;
 }
 
 .nav-links {
@@ -79,4 +67,11 @@
 
 .current-user-name {
   text-align: center;
+}
+
+.hr-line { 
+    margin: 25px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from($primary-color), to($primary-color), color-stop(50%, black));
 }
