@@ -1,0 +1,17 @@
+@import './application.scss';
+
+.products-container {
+
+  a{
+    text-decoration:none;
+  }
+
+}
+
+.products{
+  text-decoration:none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 25px;
+  flex: 1 0 21%;
+
+}

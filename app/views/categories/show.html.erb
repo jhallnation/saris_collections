@@ -10,7 +10,7 @@
 
 <div class='category-products-container'>     
   <% @category.products.each do |product| %>
-    <% if product.published?|| logged_in?(:site_admin) %>
+    <% if product.published? || logged_in?(:site_admin) %>
       <div class='category-products'>
         <%= link_to product do %>
           <div class='product-link-title'>
@@ -23,7 +23,10 @@
   <% end %>
 </div>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) if logged_in?(:site_admin) %> |
+<br>
+
+<div class='bottom-links'>
+  <%= link_to "Edit this category", edit_category_path(@category) if logged_in?(:site_admin) %> 
+  <% if logged_in?(:site_admin) %> | <% end %>
   <%= link_to "Back to Home", categories_path %>
 </div>

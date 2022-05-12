@@ -3,25 +3,29 @@
 
     <%= image_tag check_image(inventory.image.url), size: "350x200" %>
 
+    <br>
+    <br>
+
     <p>
       <strong>Color:</strong>
       <%= inventory.color %>
     </p>
+
+    <br>
 
     <p>
       <strong>Size:</strong>
       <%= inventory.size %>
     </p>
 
+    <br>
+
     <p>
-      <strong>Quantity:</strong>
+      <strong>Left in stock:</strong>
       <%= inventory.quantity %>
     </p>
 
-    <p>
-      <strong>Product:</strong>
-      <%= inventory.product.title %>
-    </p>
+    <br>
 
     <p>
       <strong>Price:</strong>

@@ -99,3 +99,17 @@ html, body {
     color:$primary-color;
   }
 }
+
+.breadcrumb-nav {
+ font-family: $default-font;
+ margin-bottom:15px;
+ a {
+  text-decoration:none;
+  color:$primary-color;
+ }
+}
+.bottom-links a{
+  text-decoration:none;
+  color:$primary-color;
+}
+

@@ -8,14 +8,17 @@
 
 <%= image_tag check_image(@product.image), size: "350x200" %>
 
+<br>
+
 <%= render @product %>
+
+<br>
 
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) if logged_in?(:site_admin) %>
 </div>
 
 <div>
-  <h4>Inventory</h4>
 
   <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) if logged_in?(:site_admin) %>
 
