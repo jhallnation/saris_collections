@@ -6,10 +6,12 @@
 
     <br>
 
-    <%= button_to "Destroy this category", @category, method: :delete if logged_in?(:site_admin) %>
+    <%= button_to "Destroy this category", @category, class:'destroy-link', method: :delete if logged_in?(:site_admin) %>
+
+    <br>
     
-    <div>
-      <%= link_to "Show this category", @category %> |
+    <div class='admin-link'>
+      <%= link_to "Back to #{@category.title}", @category %> |
       <%= link_to "Back to home", categories_path %>
     </div>
   </div>

@@ -4,7 +4,11 @@
 
 <br>
 
-<div>
-  <%= link_to "Back to this #{@product_title}", product_path(@inventory.product_id.to_i) %>
+<div class='admin-link'>
+  <%= link_to "Back to #{@product_title}", product_path(@inventory.product_id.to_i) %>
+
+  <br>
+  <br>
+
   <%= link_to "Back to inventories", inventories_path %>
 </div>

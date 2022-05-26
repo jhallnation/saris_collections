@@ -32,7 +32,10 @@
       $<%= inventory.price %>
     </p>
 
+    <br>
 
-    <%= link_to "Edit this inventory", edit_inventory_path(inventory) if logged_in?(:site_admin) %> 
+    <div class='admin-link' >
+      <%= link_to "Edit this inventory", edit_inventory_path(inventory) if logged_in?(:site_admin) %> 
+    </div>
   </div>
   <% end %>

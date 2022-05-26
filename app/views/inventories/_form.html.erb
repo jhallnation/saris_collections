@@ -48,7 +48,8 @@
 
     <div class='form-text-field'>
       <%= form.label :image, style: "display: block" %>
-      Current image <br>
+      <br>
+      <h5>Current image</h5> 
       <% if @inventory.image.url %>
         <%= image_tag @inventory.image.url %>
       <% else %>

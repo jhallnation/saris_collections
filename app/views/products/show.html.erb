@@ -14,13 +14,20 @@
 
 <br>
 
-<div>
+<div class='admin-link'>
   <%= link_to "Edit this product", edit_product_path(@product) if logged_in?(:site_admin) %>
 </div>
 
+<br>
+
+<div class='admin-link'>
+  <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) if logged_in?(:site_admin) %>
+</div>
+
+<br>
+
 <div>
 
-  <%= link_to "Add Inventory", new_inventory_path(:product_id => @product.id) if logged_in?(:site_admin) %>
 
   <div class="inventories">
     <%= render @inventories %>

@@ -6,7 +6,11 @@
 
 <%= render @category %>
 
-<%= link_to "Add Product", new_product_path(:category_id => @category.id) if logged_in?(:site_admin) %>
+<div class='admin-link'>
+  <%= link_to "Add Product", new_product_path(:category_id => @category.id) if logged_in?(:site_admin) %>
+</div>
+
+<br>
 
 <div class='category-products-container'>     
   <% @category.products.each do |product| %>

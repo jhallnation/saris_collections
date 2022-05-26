@@ -113,3 +113,20 @@ html, body {
   color:$primary-color;
 }
 
+.destroy-link {
+  background-color: #C70039;
+  color: $secondary-color;
+  padding: 10px;
+  border: 1px solid black;
+  cursor:pointer;
+
+  &:hover {
+    background-color: $secondary-color;;
+    color: #C70039;
+    border: 1px solid black;
+  }
+
+}
+
+
+
